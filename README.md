@@ -1,3 +1,17 @@
 # ML_for_CS
 
 I have implemented the method described in ["STRIP: A Defence Against Trojan Attacks on Deep Neural Networks"](https://dl.acm.org/doi/pdf/10.1145/3359789.3359790).
+
+## I. Dependencies
+   1. Python 3.6.9
+   2. Keras 2.4.3
+   3. Numpy 1.18.5
+   4. Matplotlib 2.2.2
+   5. H5py 2.10.0
+   6. TensorFlow-gpu 2.3.1
+   7. Opencv-python 4.4.0.46
+
+## II. Evaluating the Methodl 
+   1. To evaluate the STRIP method, execute `strip.py` by running:  
+      `python strip.py --model_filename model_dir --validation_data val_dir --test_data test_dir --n_perturb N`.
+      in which `model_dir` is the path to the model, `val_dir` is the path to the file containing clean validation data, `test_dir` is the path to the file containing samples to be evaluated, and `N` is the number of perturbations added to each input.
