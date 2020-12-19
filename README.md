@@ -19,3 +19,6 @@ I have implemented the method described in ["STRIP: A Defence Against Trojan Att
 ## III. Results
    1. When the `best_N` argument is added, a figure will be generated under Figs folder which depicts the variance of entropies with respect to the different values of `N`. The maximum value of `N` is set to be 20 in the code.
    ![Best N](/Figs/std_vs_N.png)
+
+   2. Then the threshold will be calculated based on the `N`, `pct`, and validation data.
+   3. The False negative rate of the method on the test data will be reported.
