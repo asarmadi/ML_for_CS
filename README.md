@@ -11,7 +11,7 @@ I have implemented the method described in ["STRIP: A Defence Against Trojan Att
    6. TensorFlow-gpu 2.3.1
    7. Opencv-python 4.4.0.46
 
-## II. Evaluating the Methodl 
+## II. Evaluating the Method 
    1. To evaluate the STRIP method, execute `strip.py` by running:  
-      `python strip.py --model_filename model_dir --validation_data val_dir --test_data test_dir --n_perturb N`.
-      in which `model_dir` is the path to the model, `val_dir` is the path to the file containing clean validation data, `test_dir` is the path to the file containing samples to be evaluated, and `N` is the number of perturbations added to each input.
+      `python strip.py --model_filename model_dir --validation_data val_dir --test_data test_dir --percent pct --best_N`.
+      in which `model_dir` is the path to the model, `val_dir` is the path to the file containing clean validation data, `test_dir` is the path to the file containing samples to be evaluated, `pct` is a float number between 0 and 1 that determines the percentage of FAR for choosing threshold, and the argument `best_N` can be added to the above command to specify that the best N should be calculated.
