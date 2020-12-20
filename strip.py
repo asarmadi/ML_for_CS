@@ -20,9 +20,11 @@ args = parser.parse_args()
 max_N = 20
 
 x_valid, y_valid = data_loader(args.validation_data)
+x_valid = data_preprocess(x_valid)
 n_classes = len(np.unique(y_valid))
 
 x_test, y_test = data_loader(args.test_data)
+x_test = data_preprocess(x_test)
 
 model = tf.keras.models.load_model(args.model_filename)
 
