@@ -19,10 +19,15 @@ To generate entropy lists for the vailable validation data, execute `config.py` 
       
 ## III. Evaluating the Method
 There are 4 files for evaluation of the STRIP on 4 different models named: eval1.py, eval2.py, eval3.py, and eval4.py. Following are the examples for running each file:
+
       `python eval1.py test_img.png`
+      
       `python eval2.py test_img.png`
+      
       `python eval3.py test_img.png`
+      
       `python eval4.py test_img.png`
+      
       in which `test_img.png` is the input image to be evaluated. The output range is [0,1283] and 1283 corresponds to a poisoned image.
 ## IV. Results
    1. When the `best_N` argument is added, a figure will be generated under Figs folder which depicts the variance of entropies with respect to the different values of `N`. The maximum value of `N` is set to be 20 in the code. Following figure is a sample output of the method.
