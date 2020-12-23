@@ -12,7 +12,6 @@ import scipy.stats
 parser = argparse.ArgumentParser(description='Training Shared Feature Extractor')
 parser.add_argument('--model_filename', type=str, default = './models/multi_trigger_multi_target_bd_net.h5', help='Path to the model')
 parser.add_argument('--validation_data', type=str, default = './data/clean_validation_data.h5', help='Path to the validation data')
-parser.add_argument('--percent', default=0.01, type=float, help='Percent of FAR for choosing threshold')
 parser.add_argument('--best_N', action='store_true', default=False, help='Activates the mode to find the best N (Default: False)')
 parser.add_argument('--random', action='store_true', default=False, help='Activates the mode to superimpose random perturbations (Default: False)')
 args = parser.parse_args()
