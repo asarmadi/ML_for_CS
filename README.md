@@ -20,15 +20,24 @@ To generate entropy lists for the vailable validation data, execute `config.py` 
 ## III. Evaluating the Method
 There are 4 files for evaluation of the STRIP on 4 different models named: eval1.py, eval2.py, eval3.py, and eval4.py.
 
-The eval1.py is designed for anonymous_1_bd_net.h model, and could be ran as follows: 
+The eval1.py is designed for anonymous_1_bd_net.h model, and could be ran as follows:
+
       `python3 eval1.py test_img.png`
+      
 The eval2.py is designed for anonymous_2_bd_net.h model, and could be ran as follows:
+
       `python3 eval2.py test_img.png`
+      
 The eval3.py is designed for multi_trigger_multi_target_bd_net.h model, and could be ran as follows:     
+
       `python3 eval3.py test_img.png`
+      
 The eval4.py is designed for sunglasses_bd_net.h model, and could be ran as follows:      
+
       `python3 eval4.py test_img.png`
+      
 In all the examples, `test_img.png` is the input image to be evaluated. The output range is [0,1283] and 1283 corresponds to a poisoned image. If the second version of strip wanted to be evaluated, the `--random` argument could be added to each command. For example, for evaluating the first model, we have:
+
       `python3 eval1.py test_img.png --random`
 ## IV. Results
    1. When the `best_N` argument is added, a figure will be generated under Figs folder which depicts the variance of entropies with respect to the different values of `N`. The maximum value of `N` is set to be 20 in the code. Following figure is a sample output of the method.
