@@ -11,12 +11,20 @@ The STRIP method ["STRIP: A Defence Against Trojan Attacks on Deep Neural Networ
    6. TensorFlow-gpu 2.3.1
    7. Opencv-python 4.4.0.46
 
-## II. Evaluating the Method 
-   1. To evaluate the STRIP method, execute `strip.py` by running:  
-      `python strip.py --model_filename model_dir --validation_data val_dir --test_data test_dir --percent pct --best_N --random`.
-      in which `model_dir` is the path to the model, `val_dir` is the path to the file containing clean validation data, `test_dir` is the path to the file containing samples to be evaluated, `pct` is a float number between 0 and 1 that determines the percentage of FAR for choosing threshold, the argument `best_N` can be added to the above command to specify that the best N should be calculated, and the argument `random` will determine whether the random perturbation of the samples should be used for perturbing the inputs or not.
-
-## III. Results
+## II. Initialization 
+**(Note: This step could be ignored if you want to evaluate the method, since corresponding entropy lists are generated under entropy_lists folder)**
+To generate entropy lists for the vailable validation data, execute `config.py` by running:  
+      `python config.py --model_filename model_dir --validation_data val_dir --percent pct --best_N --random`.
+      in which `model_dir` is the path to the model, `val_dir` is the path to the file containing clean validation data, `pct` is a float number between 0 and 1 that determines the percentage of FAR for choosing threshold, the argument `best_N` can be added to the above command to specify that the best N should be calculated, and the argument `random` will determine whether the random perturbation of the samples should be used for perturbing the inputs or not.
+      
+## III. Evaluating the Method
+There are 4 files for evaluation of the STRIP on 4 different models named: eval1.py, eval2.py, eval3.py, and eval4.py. Following are the examples for running each file:
+      `python eval1.py test_img.png`
+      `python eval2.py test_img.png`
+      `python eval3.py test_img.png`
+      `python eval4.py test_img.png`
+      in which `test_img.png` is the input image to be evaluated. The output range is [0,1283] and 1283 corresponds to a poisoned image.
+## IV. Results
    1. When the `best_N` argument is added, a figure will be generated under Figs folder which depicts the variance of entropies with respect to the different values of `N`. The maximum value of `N` is set to be 20 in the code. Following figure is a sample output of the method.
    ![Best N](/Figs/std_vs_N.png)
 
