@@ -47,12 +47,7 @@ if args.best_N:
    plt.savefig('Figs/std_vs_N_'+str_name+'.png')
    plt.close()
 
-   N = 1
-   for i in range(1,len(std_list)-1):
-       if (std_list[i] - std_list[i+1])<0.01:
-          N = i
-else:
-   N = 100
+N = 100
 
 if args.random:
    H_list = find_entropy_list_rand(model, x_valid, N)
