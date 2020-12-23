@@ -45,10 +45,31 @@ def classify_sample(model, sample, x_valid, threshold, N, n_classes):
         output = model(np.expand_dims(perturbed_input,axis=0))
         H += cal_entropy(output)
     H /= N
-    print(H)
     if H >= threshold:
        return np.argmax(model(np.expand_dims(sample,axis=0)), axis=1)
     else:
        return n_classes
 
+def find_entropy_list_rand(model, x_test, N):
+    H_list = []
+    for i, input_ in enumerate(x_test):
+        H = 0
+        for j in range(N):
+            perturbed_input = cv2.addWeighted(input_,1,np.random.rand(input_.shape[0],input_.shape[1],input_.shape[2]),1,0,dtype=cv2.CV_64F)
+            output = model(np.expand_dims(perturbed_input,axis=0))
+            H += cal_entropy(output)
+        H /= N
+        H_list.append(H)
+    return H_list
 
+def classify_sample_rand(model, sample, threshold, N, n_classes):
+    H = 0
+    for j in range(N):
+        perturbed_input = cv2.addWeighted(sample,1,np.random.rand(sample.shape[0],sample.shape[1],sample.shape[2]),1,0,dtype=cv2.CV_64F)
+        output = model(np.expand_dims(perturbed_input,axis=0))
+        H += cal_entropy(output)
+    H /= N
+    if H >= threshold:
+       return np.argmax(model(np.expand_dims(sample,axis=0)), axis=1)
+    else:
+       return n_classes
