@@ -47,6 +47,7 @@ In all the examples, `test_img.png` is the input image to be evaluated. The outp
 
    2. Then the threshold will be calculated based on the `N`, `pct`, and validation data.
    3. The False negative rate of the method on the available test data is reported in the following Table:
+   
    | Tables        | Are           | Cool  |
    | ------------- |:-------------:| -----:|
    | col 3 is      | right-aligned | $1600 |
