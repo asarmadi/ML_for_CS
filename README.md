@@ -48,6 +48,6 @@ In all the examples, `test_img.png` is the input image to be evaluated. The outp
    2. Then the threshold will be calculated based on the `N`, `pct`, and validation data.
    3. The False negative rate of the method on the available test data is reported in the following Table:
    
-   |         | anonymous_1_bd_net | multi_trigger_multi_target_bd_net  |sunglasses_bd_net
+   |    Table     | anonymous_1_bd_net | multi_trigger_multi_target_bd_net  |sunglasses_bd_net|
    | ------------- |:-------------:| -----:|
    | Image Superimposing| 24.9 | 1600 | 13.17|
