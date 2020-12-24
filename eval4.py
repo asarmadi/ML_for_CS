@@ -28,9 +28,9 @@ model = tf.keras.models.load_model(args.model_filename)
 N = 100
 
 if args.random:
-   H_list = np.load('H_list_rnd_4.npy')
+   H_list = np.load('entropy_lists/H_list_rnd_4.npy')
 else:
-   H_list = np.load('H_list_4.npy')
+   H_list = np.load('entropy_lists/H_list_4.npy')
 threshold = scipy.stats.norm.ppf(args.percent, loc=np.array(H_list).mean(), scale=np.array(H_list).std())
 
 if args.random:
